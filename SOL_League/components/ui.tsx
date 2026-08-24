@@ -1,0 +1,10 @@
+import Link from "next/link";
+import type {CSSProperties,ReactNode} from "react";
+import {journey,pillars} from "../lib/content";
+import {Icon} from "./icons";
+export function SectionHeading({kicker,title,description}:{kicker:string;title:ReactNode;description?:string}){return <div className="section-heading"><div className="section-kicker">{kicker}</div><h2 className="section-title">{title}</h2>{description&&<p className="section-description">{description}</p>}</div>}
+export function PageHero({eyebrow,title,description}:{eyebrow:string;title:ReactNode;description:string}){return <section className="page-hero"><div className="shell"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{description}</p></div></section>}
+export function Pillars(){return <div className="cards">{pillars.map(pillar=><article className="card" key={pillar.title}><div className="card-icon"><Icon name={pillar.icon}/></div><h3>{pillar.title}</h3><p>{pillar.text}</p></article>)}</div>}
+export function Journey(){return <div className="journey">{journey.map(step=><article className="journey-step" key={step.number} style={{"--journey-color":step.color} as CSSProperties}><div className="journey-number">{step.number}</div><h3>{step.title}</h3><strong>{step.phase}</strong><p>{step.quote}</p></article>)}</div>}
+export function CallToAction({title=<>Klaar voor jouw <span className="accent">next level?</span></>,text="Join gratis de community, ontmoet jouw crew en ontdek waar jouw skills je kunnen brengen."}:{title?:ReactNode;text?:string}){return <div className="cta-panel"><div className="section-kicker">Jouw volgende move</div><h2 className="section-title">{title}</h2><p>{text}</p><Link href="/aanmelden" className="button button-primary">JOIN DE LEAGUE <Icon name="arrow" size={18}/></Link></div>}
+export function Feature({number,title,children}:{number:string;title:string;children:ReactNode}){return <article className="feature"><div className="feature-number">{number}</div><div><h3>{title}</h3><p>{children}</p></div></article>}
