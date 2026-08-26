@@ -1,6 +1,6 @@
 # Game & Talent League — GitHub + Netlify
 
-Volledige, statische website voor de gratis Fortnite-community van SOL voor jongeren van 14 tot en met 19 jaar.
+Volledige, statische website voor de gratis Online community van SOL voor jongeren van 14 tot en met 19 jaar.
 
 ## Publiceren met GitHub en Netlify
 
